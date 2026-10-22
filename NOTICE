@@ -1,0 +1,21 @@
+# NOTICE
+
+dsh-mobile-remote
+Copyright 2026 zfy10086
+
+本作品是 **@linxin666/dsh-remote-web-ui 0.4.6** 的衍生作品（fork），
+原项目采用 Apache License 2.0 许可：
+
+- 原作者：linxin666
+- 原仓库：https://github.com/zhu1090093659/dsh-web
+- 原始包：@linxin666/dsh-remote-web-ui
+- 原版安装命令（引用）：
+  ```
+  dsh plugin --profile web add @linxin666/dsh-remote-web-ui@latest
+  ```
+
+本仓库对其构建产物做了有限修改，修改范围与理由见 `PATCHES.md`；
+未修改的行为、接口与署名均归原作者所有。
+
+本仓库与原作者、上游项目没有隶属关系，也未获其背书；
+如上游更新并修复了同类问题，建议优先使用上游版本。

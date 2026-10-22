@@ -1,0 +1,11 @@
+# dsh-mobile-remote：往 profile 的层栈里插入本插件。
+# 一个包双面（host 半区 + 浏览器半区），下面这一行同时挂载两边：
+#   - host：配对令牌、设备会话、/api/pair 路由、/api 门控监听
+#   - 浏览器：lib/client.js（远端入口、二维码面板、设置卡片、移动端适配层）
+#
+# 行 id 用 `remote-web-ui`（与上游「单独安装」时的行 id 一致）：
+# 插件客户端靠这组 id 在设置服务里认出自己那一行，改成别的会让设置卡片
+# 绑到不存在的入口。包名（name）才是 dsh-mobile-remote。
+- insert:
+    - id: remote-web-ui
+      name: 'dsh-mobile-remote'

@@ -1,0 +1,86 @@
+{
+  "name": "dsh-mobile-remote",
+  "version": "0.4.7",
+  "description": "基于 @linxin666/dsh-remote-web-ui 0.4.6 的 fork：手机扫码远程访问 DSH Web GUI，修复 cloudflared 二进制下载截断导致的 spawn EFTYPE（完整性校验 + 镜像断点续传）",
+  "license": "Apache-2.0",
+  "icon": "icon.svg",
+  "type": "module",
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./invariant": {
+      "types": "./lib/types/invariant.d.ts",
+      "default": "./lib/invariant.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/**/*.js",
+    "lib/**/*.d.ts",
+    "cordis.patch.yml",
+    "icon.svg",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.0-rc.2"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ],
+      "platform": "web"
+    }
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.18.4",
+    "cloudflared": "^0.7.3",
+    "clsx": "^2.1.1",
+    "qrcode.react": "^4.2.0",
+    "yaml": "^2.8.2",
+    "zod": "^4.4.3"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh": ">=0.2.0-rc.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "scripts": {
+    "test": "node test-binary-fix.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zfy10086/dsh-mobile-remote.git"
+  },
+  "homepage": "https://github.com/zfy10086/dsh-mobile-remote",
+  "bugs": {
+    "url": "https://github.com/zfy10086/dsh-mobile-remote/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "remote",
+    "mobile",
+    "cloudflared",
+    "tunnel"
+  ]
+}
